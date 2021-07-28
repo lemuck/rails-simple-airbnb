@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="flat">
+  	<h1> <%= @flat.name %> </h1>
+  	<%= link_to 'Edit', edit_flat_path(@flat), class: 'btn btn-danger' %>
+    <p><%= @flat.address %></p>
+    <p> <%= @flat.description %> </p>
+    <div class="info">
+      <i class="fas fa-user-friends"></i><%= @flat.number_of_guests %> | <i class="fas fa-euro-sign"></i><%= @flat.price_per_night %>
+    </div>
+    <%= link_to 'Home', flats_path, class: 'btn btn-primary' %>
+    <%= link_to 'Remove', flat_path(@flat),
+    	              method: :delete,
+    	              data: { confirm: 'Are u sure?' },
+    	              class: 'btn btn-danger' %>
+  </div>
+</div>
